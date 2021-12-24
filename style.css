@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: Raleway;
+    font-family: "Raleway";
     color: #777;
 }
 
@@ -20,14 +20,14 @@ html, body {
 
 .nav a {
     display: inline-block;
-    padding: .5em;
+    padding: 8px;
     color: white;
     text-decoration: none;
 }
 
 .main-nav {
     text-align: center;
-    font-size: 1.1em;
+    font-size: 17px;
     font-weight: lighter;
     border-bottom: 1px solid rgba(255, 255, 255, .3)
 }
@@ -42,7 +42,7 @@ html, body {
 
 .main-header {
     background-color: rgba(0, 0, 0, .6);
-    background-image: url("Images/Header Background.jpg");
+    background-image: url("images/intro-1601499029.jpeg");
     background-blend-mode: multiply;
     background-size: cover;
     padding-bottom: 30px;
@@ -50,31 +50,31 @@ html, body {
 .store-name {
     text-align: center;
     margin: 0;
-    font-size: 4em;
-    font-family: "Booter - Zero Zero";
+    font-size: 64px;
+    font-family: "Cormorant";
     font-weight: normal;
     color: white;
 }
 
 .store-name-large {
-    font-size: 8em;
+    font-size: 128px;
 }
 
 .content-section {
-    margin: 1em;
+    margin: 16px;
 }
 
 .container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 1.5em;
+    padding: 0 24px;
 }
 .section-header {
-    font-family: "Metal Mania";
+    font-family: "Cinzel";
     font-weight: normal;
     color: #333;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 40px;
 }
 
 .about-store-image {
@@ -88,7 +88,7 @@ html, body {
 .main-footer {
     background-color: #56CCF2;
     color: white;
-    padding: .25em 0;
+    padding: 4px 0;
 }
 
 .main-footer-container {
@@ -102,7 +102,7 @@ html, body {
 }
 
 .footer-nav li {
-    padding: 0 .5em;
+    padding: 0 8px;
 }
 
 .footer-nav img {
@@ -112,20 +112,20 @@ html, body {
 .btn {
     text-align: center;
     vertical-align: middle;
-    padding: .67em .67em;
+    padding: 11px 11px;
     cursor: pointer;
 }
 
 .btn-header {
-    margin: .5em 15% 2em 15%;
+    margin: 8px 15% 32px 15%;
     color: white;
     border: 2px solid #2D9CDB;
     background-color: rgba(255, 255, 255, .1);
     border-radius: 0;
-    font-size: 1.5em;
+    font-size: 24px;
     font-weight: lighter;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 32px;
+    padding-right: 32px;
 }
 
 .btn-header:hover {
@@ -136,7 +136,7 @@ html, body {
     display: block;
     margin: 0 auto;
     color: #2D9CDB;
-    font-size: 4em;
+    font-size: 64px;
     border-radius: 50%;
     width: 100px;
     height: 100px;
@@ -148,7 +148,7 @@ html, body {
     color: white;
     background-color: #56CCF2;
     border: none;
-    border-radius: .3em;
+    border-radius: 5px;
     font-weight: bold;
 }
 
