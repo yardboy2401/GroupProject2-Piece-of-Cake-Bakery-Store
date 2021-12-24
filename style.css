@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    font-family: "Raleway";
+    color: #777;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+.nav ul {
+    margin: 0;
+}
+
+.nav li {
+    display: inline;
+}
+
+.nav a {
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+}
+
+.main-nav {
+    text-align: center;
+    font-size: 17px;
+    font-weight: lighter;
+    border-bottom: 1px solid rgba(255, 255, 255, .3)
+}
+
+.main-nav li {
+    padding: 0 5%;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, .3)
+}
+
+.main-header {
+    background-color: rgba(0, 0, 0, .6);
+    background-image: url("images/intro-1601499029.jpeg");
+    background-blend-mode: multiply;
+    background-size: cover;
+    padding-bottom: 30px;
+}
+.store-name {
+    text-align: center;
+    margin: 0;
+    font-size: 64px;
+    font-family: "Cormorant";
+    font-weight: normal;
+    color: #FAFAF2; 
+    opacity: .65;
+}
+
+.store-name-large {
+    font-size: 128px;
+}
+
+.content-section {
+    margin: 16px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.section-header {
+    font-family: "Cinzel";
+    font-weight: normal;
+    color: #333;
+    text-align: center;
+    font-size: 40px;
+}
+
+.about-store-image {
+    float: left;
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+    border-radius: 50%;
+}
+
+.main-footer {
+    background-color: #FEF9E3;
+    color: white;
+    padding: 4px 0;
+}
+
+.main-footer-container {
+    display: flex;
+    align-items: center;
+}
+
+.main-footer-container ul {
+    flex-grow: 1;
+    text-align: end;
+}
+
+.footer-nav li {
+    padding: 0 8px;
+}
+
+.footer-nav img {
+    width: 30px;
+    height: 30px;
+}
+.btn {
+    text-align: center;
+    vertical-align: middle;
+    padding: 11px 11px;
+    cursor: pointer;
+}
+
+.btn-header {
+    margin: 8px 15% 32px 15%;
+    color: white;
+    border: 2px solid #2D9CDB;
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 0;
+    font-size: 24px;
+    font-weight: lighter;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.btn-header:hover {
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.btn-play {
+    display: block;
+    margin: 0 auto;
+    color: #2D9CDB;
+    font-size: 64px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    text-align: center;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #56CCF2;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #2D9CDB;
+}
