@@ -53,7 +53,8 @@ html, body {
     font-size: 64px;
     font-family: "Cormorant";
     font-weight: normal;
-    color: white;
+    color: #FAFAF2; 
+    opacity: .65;
 }
 
 .store-name-large {
