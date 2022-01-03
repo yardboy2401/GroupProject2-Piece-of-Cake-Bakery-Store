@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piece of Cake Bakery </title>
+</head>
+<body>
+        {{!-- Nav bar for every page --}}
+    <nav id="navbar">
+        <ul id="navbar-ul">
+            <li>
+                <p><a class="link" href="/">Home</a></p>
+            </li>
+                        <li>
+                <p><a class="link" href="/about">About</a></p>
+            </li>
+            {{#if loggedIn}}
+            <li>
+                <p><a class="link" href="/store">Store</a></p>
+            </li>
+            <li>
+                <p><button id="logout-btn" class="btn-no-style">Logout</button> </p>
+            </li>
+
+            {{else}}
+            <li>
+                <p><a class="link" href="/login">Login</a></p>
+            </li>
+            {{/if}}
+        </ul>
+        <h1 id="nav-header">Piece of Cake Bakery</h1>
+    </nav>
+
+    {{{body}}}
+    
+</body>
+<script src="/js/logout.js"></script>
+<script src="/js/home.js"></script>
+</html>
