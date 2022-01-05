@@ -1,8 +1,6 @@
-require('dotenv').config()
-
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY
 const stripePublicKey = process.env.STRIPE_PUBLIC_KEY
-const stripe = require('stripe')(stripeSecretKey.trim())
+const stripe = require('stripe')(stripeSecretKey)
 
 
 // requires for express/express-session/path/controllers/helpers/express-handlebars
@@ -12,6 +10,7 @@ const path = require('path');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
+require('dotenv').config()
 
 //sequelize requires
 const sequelize = require('./config/connection');
