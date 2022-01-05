@@ -1,7 +1,6 @@
 {
   "name": "project2-pieceofcake",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,11 +18,18 @@
   },
   "homepage": "https://github.com/yardboy2401/project2-pieceofcake#readme",
   "dependencies": {
-    "dotenv": "^10.0.0",
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.3",
     "passport": "^0.5.2",
     "sequelize": "^6.12.1",
-    "stripe": "^8.194.0"
+    "stripe": "^8.195.0"
+  },
+  "description": "",
+  "devDependencies": {
+    "dotenv": "^10.0.0"
   }
 }
