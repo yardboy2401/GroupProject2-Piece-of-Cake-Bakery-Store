@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User, Store } = require("../models");
 const sequelize = require("../config/connection");
+const stripePublicKey = process.env.STRIPE_PUBLIC_KEY
 
 //get route for homepage all store items
 router.get("/", (req, res) => {
@@ -35,8 +36,12 @@ router.get("/store", (req, res) => {
           return;
         }
         const stores = dbStoreData.map((store) => store.get({ plain: true })); // .map method on all the posts
-        console.log(stores);
-        res.render("store", { stores, loggedIn: req.session.loggedIn });
+        if (req.session.user_id) {
+            res.render("store", { stores, stripePublicKey: stripePublicKey.trim(), loggedIn: req.session.loggedIn });
+        } else {
+            res.redirect('/login')
+        }
+        
       })
       .catch((err) => {
         console.log(err);

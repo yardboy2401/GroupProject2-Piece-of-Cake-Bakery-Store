@@ -27,7 +27,8 @@ function ready() {
 }
 
 var stripeHandler = StripeCheckout.configure({
-    key: stripePublicKey,
+  //  key: stripePublicKey,
+    key: 'pk_test_51KEIxsKyIJghRqcQtP6TEYCPEIWUgiRDwXoSz8qQiBR0PXSUZLsWihHZn22eU44s8oPve7V1Lqp9MiL2ieY2hGwp00WbZPnpCJ',
     locale: 'en',
     token: function(token) {
         var items = []
@@ -44,11 +45,10 @@ var stripeHandler = StripeCheckout.configure({
             })
         }
 
-        fetch('/purchase', {
-            method: 'POST',
+        fetch('/create-checkout-session', {
+            method: 'POST', 
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
             },
             body: JSON.stringify({
                 stripeTokenId: token.id,

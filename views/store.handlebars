@@ -6,13 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-  <script src="https://checkout.stripe.com/checkout.js" defer></script>
+  <script src="https://js.stripe.com/v3/" defer></script>
   <script>
-      var stripePublicKey = '<%= stripePublicKey %>'
+      var stripePublicKey = {{stripePublicKey}}
   </script>
   <script src="store.js" defer></script>
-  <title>Piece of Cake Store</title>
+  <title>Piece of Cake Bakery</title>
 </head>
 
 <body>
@@ -28,106 +29,36 @@
 </header>
 
   <main class="d-flex min-vh-100">
-    <div class="container content-section">
-      <h2 class="section-header">Bakery</h2>
-      <div class="row ">
-        <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../images/chocolatealmondcroissant.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Chocolate Almond Croissant</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Order</a>
+        <section class="container content-section">
+            <h2 class="section-header">Bakery Items</h2>
+            <div class="shop-items">
+                {{#each stores as |store|}}
+                    <div class="shop-item" data-item-id="{{store.id}}">
+                        <span class="shop-item-title">{{store.title}}</span>
+                        <img class="shop-item-image" src="../images/{{store.imgName}}">
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">${{store.price}}</span>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                        </div>
+                    </div>
+                {{/each}}
             </div>
-          </div>
-        </div>
-        <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../images/maplebar.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Maple Bar</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+        </section>
+            <section class="container content-section">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
             </div>
-          </div>
-        </div>
-        <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../images/baguette.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Baguette</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="cart-items">
             </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../images/brownies.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Brownie</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$0</span>
             </div>
-          </div>
-        </div>
-        <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../images/cakedonuts.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Cake Donut</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../images/croissant.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Croissant</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../images/scones.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Blueberry Lemon Scone</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../images/sourdoughloaf.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Sourdough Loaf</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../images/cupcake.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Chocolate Cupcake</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+        </section>
 
 
 

@@ -4,55 +4,55 @@ const storeData = [
     {
       "title": "Chocolate Almond Croissant",
       "description": "A wonderful pastry to go with your morning coffee or anytime really!",
-      "price": "349",
+      "price": "3.49",
       "imgName": "chocolatealmondcroissant.JPG"
     },
     {
         "title": "Maple Bar",
         "description": "A classic morning treat!",
-        "price": "149",
+        "price": "1.49",
         "imgName": "maplebar.JPG"
     },
     {
         "title": "Baguette",
         "description": "A delicious small crusty loaf of heaven!",
-        "price": "249",
+        "price": "2.49",
         "imgName": "baguette.JPG"
     },
     {
         "title": "Chocolate Brownie",
         "description": "An amazing little square of the best chocolate brownie!",
-        "price": "199",
+        "price": "1.99",
         "imgName": "brownies.JPG"
     },
     {
         "title": "Cake Donut",
         "description": "A wonderful little creation to go with your morning coffee or anytime really!",
-        "price": "129",
+        "price": "1.29",
         "imgName": "cakedonuts.JPG"
     },
     {
         "title": "Croissant",
         "description": "A wonderful pastry to go with your morning coffee or anytime really!",
-        "price": "299",
+        "price": "2.99",
         "imgName": "croissant.JPG"
     },
     {
         "title": "Lemon Blueberry Scone",
         "description": "A delightful bite of Lemon Blueberry Bliss!",
-        "price": "299",
+        "price": "2.99",
         "imgName": "scones.JPG"
     },
     {
         "title": "Sourdough Bread Loaf",
         "description": "A an amazing loaf of Sourdough Bread!",
-        "price": "399",
+        "price": "3.99",
         "imgName": "sourdoughloaf.JPG"
     },
     {
         "title": "Chocolate Cupcake",
         "description": "A delicious treat anytime!",
-        "price": "149",
+        "price": "1.49",
         "imgName": "cupcake.JPG"
     },
   ]
