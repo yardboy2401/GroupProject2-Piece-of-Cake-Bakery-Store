@@ -13,10 +13,14 @@ if (process.env.JAWSDB_URL) {
     process.env.DB_USER,
     process.env.DB_PASSWORD,
     {
-      host: '24.19.103.57',
-      dialect: 'mysql',
-      port: 3306,
-      logging: false
+        host: '24.19.103.57',
+        dialect: 'mysql',
+        port: 3306,
+        logging: false
+      // host: 'localhost',
+      // dialect: 'mysql',
+      // port: 3306,
+      // logging: false
     }
   );
 }

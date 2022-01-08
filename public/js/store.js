@@ -26,55 +26,92 @@ function ready() {
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
 
-var stripeHandler = StripeCheckout.configure({
-  //  key: stripePublicKey,
-    key: 'pk_test_51KEIxsKyIJghRqcQtP6TEYCPEIWUgiRDwXoSz8qQiBR0PXSUZLsWihHZn22eU44s8oPve7V1Lqp9MiL2ieY2hGwp00WbZPnpCJ',
-    locale: 'en',
-    token: function(token) {
-        var items = []
-        var cartItemContainer = document.getElementsByClassName('cart-items')[0]
-        var cartRows = cartItemContainer.getElementsByClassName('cart-row')
-        for (var i = 0; i < cartRows.length; i++) {
-            var cartRow = cartRows[i]
-            var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-            var quantity = quantityElement.value
-            var id = cartRow.dataset.itemId
-            items.push({
-                id: id,
-                quantity: quantity
-            })
-        }
+// var stripeHandler = StripeCheckout.configure({
+//   //  key: stripePublicKey,
+//     key: 'pk_test_51KEIxsKyIJghRqcQtP6TEYCPEIWUgiRDwXoSz8qQiBR0PXSUZLsWihHZn22eU44s8oPve7V1Lqp9MiL2ieY2hGwp00WbZPnpCJ',
+//     locale: 'en',
+//     token: function(token) {
+//         var items = []
+//         var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+//         var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+//         for (var i = 0; i < cartRows.length; i++) {
+//             var cartRow = cartRows[i]
+//             var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+//             var quantity = quantityElement.value
+//             var id = cartRow.dataset.itemId
+//             items.push({
+//                 id: id,
+//                 quantity: quantity
+//             })
+//         }
 
-        fetch('/create-checkout-session', {
-            method: 'POST', 
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                stripeTokenId: token.id,
-                items: items
-            })
-        }).then(function(res) {
-            return res.json()
-        }).then(function(data) {
-            alert(data.message)
-            var cartItems = document.getElementsByClassName('cart-items')[0]
-            while (cartItems.hasChildNodes()) {
-                cartItems.removeChild(cartItems.firstChild)
-            }
-            updateCartTotal()
-        }).catch(function(error) {
-            console.error(error)
-        })
-    }
-})
+//         fetch('/create-checkout-session', {
+//             method: 'POST', 
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify({
+//                 stripeTokenId: token.id,
+//                 items: items
+//             })
+//         }).then(function(res) {
+//             if(res.ok) return res.json()
+//             return res.json().then(json => Promise.reject(json))
+//         // }).then(function(data) {
+//         //     alert(data.message)
+//         //     var cartItems = document.getElementsByClassName('cart-items')[0]
+//         //     while (cartItems.hasChildNodes()) {
+//         //         cartItems.removeChild(cartItems.firstChild)
+//         //     }
+//         //     updateCartTotal()
+//         }).then(({ url }) => {
+//             window.location = url
+//         }).catch(function(error) {
+//             console.error(error)
+//         })
+//     }
+// })
+
+// var stripe = Stripe("pk_test_51KEIxsKyIJghRqcQtP6TEYCPEIWUgiRDwXoSz8qQiBR0PXSUZLsWihHZn22eU44s8oPve7V1Lqp9MiL2ieY2hGwp00WbZPnpCJ");
+var checkoutButton = document.getElementsByClassName("btn-purchase");
+
+checkoutButton.addEventListener("click", function () {
+  fetch("/payment", {
+    headers: {'Content-Type': 'application/json'},
+    method: "POST",
+    body: JSON.stringify({
+        "product": {
+            "name": "iPhone 12", 
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-12-purple-select-2021?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1617130317000", 
+            "amount": 100,
+            "quantity": 1
+        }})
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (session) {
+      return stripe.redirectToCheckout({ sessionId: session.id });
+    })
+    .then(function (result) {
+      // If redirectToCheckout fails due to a browser or network
+      // error, you should display the localized error message to your
+      // customer using error.message.
+      if (result.error) {
+        alert(result.error.message);
+      }
+    })
+    .catch(function (error) {
+      console.error("Error:", error);
+    });
+});
 
 function purchaseClicked() {
     var priceElement = document.getElementsByClassName('cart-total-price')[0]
     var price = parseFloat(priceElement.innerText.replace('$', '')) * 100
-    stripeHandler.open({
-        amount: price
-    })
+    // stripeHandler.open({
+    //     amount: price
+    // })
 }
 
 function removeCartItem(event) {

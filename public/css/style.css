@@ -16,6 +16,7 @@ html, body {
 
 .nav li {
     display: inline;
+    margin: 10px auto 10px auto;
 }
 
 .nav a {
@@ -80,8 +81,8 @@ html, body {
 
 .about-store-image {
     float: left;
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
     margin: 15px;
     border-radius: 50%;
 }

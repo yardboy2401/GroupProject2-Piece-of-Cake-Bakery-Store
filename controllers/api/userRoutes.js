@@ -4,7 +4,7 @@ const { User, Store } = require("../../models");
 //get route for all the users
 router.get("/", (req, res) => {
   User.findAll({
-    attributes: ["id", "name", "email", "role", "password"], //TODO remove password in the futrue
+    attributes: ["id", "name", "email", "password"], //TODO remove password in the futrue
   }) //include the posts and comments of the specific user
     .then((dbUserData) => {
       res.json(dbUserData);
@@ -21,7 +21,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "name", "email", "role", "password"], //remove password in the futrue    
+    attributes: ["id", "name", "email", "password"], //remove password in the futrue    
   }) //include the posts and comments of this user
     .then((dbUserData) => {
       if (!dbUserData) {
@@ -38,26 +38,26 @@ router.get("/:id", (req, res) => {
 
 //post route to add a user
 router.post("/", (req, res) => {
-  User.create({
-    //expects username, email, password
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password,
-  })
-    .then((dbUserData) => {
-      //save the data in a session
-      req.session.save(() => {
-        // run the save function
-        req.session.user_id = dbUserData.id; 
-        req.session.username = dbUserData.username;
-        req.session.loggedIn = true;
-        res.json(dbUserData); 
-      });
+    User.create({
+      //expects username, email, password
+      name: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
     })
-    .catch((err) => {
-      res.status(500).json(err);
-    });
-});
+      .then((dbUserData) => {
+        //save the data in a session
+        req.session.save(() => {
+          // run the save function
+          req.session.user_id = dbUserData.id; 
+          req.session.name = dbUserData.name;
+          req.session.loggedIn = true;
+          res.json(dbUserData); 
+        });
+      })
+      .catch((err) => {
+        res.status(500).json(err);
+      });
+  });
 
 //login route for the user
 router.post("/login", (req, res) => {
