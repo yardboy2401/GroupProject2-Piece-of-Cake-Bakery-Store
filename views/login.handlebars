@@ -1,37 +1,45 @@
 {{!-- login/signup front-end page with fields and buttons --}}
 <link rel="stylesheet" href="./css/login.css">
 <div class="wrapper">
-    <form class="login-form">
+   
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-sm-4">
+
+ <form class="login-form">
         <div class="padding-md">
             <label for="email-login">Email:</label>
-            <input type="text" id="email-login" />
+            <input type="text" id="email-login" class="form-control" />
         </div>
         <div class="padding-md">
             <label for="password-login">Password:</label>
-            <input type="password" id="password-login" />
+            <input type="password" id="password-login" class="form-control" />
         </div>
         <div class="padding-md">
-            <button type="submit" id="login-btn">Login</button>
+            <button type="submit" class="btn btn-primary" id="login-btn">Login</button>
         </div>
     </form>
-
-    <form class="signup-form">
-        <div class="padding-md">
-            <label for="username-signup">Username:</label>
-            <input id="username-signup" type="text">
+                <form class="signup-form my-5">
+                    <div class="padding-md">
+                        <label for="username-signup">Username:</label>
+                        <input id="username-signup" type="text" class="form-control">
+                    </div>
+                    <div class="padding-md">
+                        <label for="email-signup">Email:</label>
+                        <input type="text" id="email-signup" class="form-control" />
+                    </div>
+                    <div class="padding-md">
+                        <label for="password-signup">Password:</label>
+                        <input type="password" id="password-signup" class="form-control" />
+                    </div>
+                    <div class="padding-md">
+                        <button type="submit" class="btn btn-primary" id="signup-btn">Signup</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="padding-md">
-            <label for="email-signup">Email:</label>
-            <input type="text" id="email-signup" />
-        </div>
-        <div class="padding-md">
-            <label for="password-signup">Password:</label>
-            <input type="password" id="password-signup" />
-        </div>
-        <div class="padding-md">
-            <button type="submit" id="signup-btn">Signup</button>
-        </div>
-    </form>
+    </div>
 </div>
 
 <script src="/js/login.js"></script>
