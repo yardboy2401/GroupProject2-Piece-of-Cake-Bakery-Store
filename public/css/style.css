@@ -118,9 +118,10 @@ html, body {
 }
 
 .btn-header {
+    text-align: center;
     margin: 8px 15% 32px 15%;
     color: white;
-    border: 2px solid #2D9CDB;
+    border: 2px solid white;
     background-color: rgba(255, 255, 255, .1);
     border-radius: 0;
     font-size: 24px;
@@ -136,7 +137,7 @@ html, body {
 .btn-play {
     display: block;
     margin: 0 auto;
-    color: #2D9CDB;
+    color: white;
     font-size: 64px;
     border-radius: 50%;
     width: 100px;
@@ -154,7 +155,7 @@ html, body {
 }
 
 .btn-primary:hover {
-    background-color: #2D9CDB;
+    background-color: white;
 }
 
 
@@ -297,4 +298,28 @@ html, body {
     display: block;
     margin: 40px auto 80px auto;
     font-size: 1.75em;
+}
+
+
+.carousel-caption {
+    padding-bottom: 5%;
+}
+
+.carousel-caption h3 {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.carousel p {
+    font-size: 24px;
+    color: beige;
+    opacity: 0,5;
+}
+
+.carousel-item {
+    height: 300px;
+}
+
+.w-100 {
+    height: 50px;
 }
