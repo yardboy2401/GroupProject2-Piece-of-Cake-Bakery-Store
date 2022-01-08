@@ -17,30 +17,30 @@
 </head>
 
 <body>
-  <header class="main-header">
-    <nav class="main-nav nav">
-            <li>
-                <p><a class="link" href="/">Home</a></p>
-            </li>
-                        <li>
-                <p><a class="link" href="/about">About</a></p>
-            </li>
-            {{#if loggedIn}}
-            <li>
-                <p><a class="link" href="/store">Store</a></p>
-            </li>
-            <li>
-                <p><button id="logout-btn" class="btn-no-style">Logout</button> </p>
-            </li>
+    <header class="main-header">
+      <nav class="nav main-nav">
+        <li>
+          <p><a class="link" href="/">Home</a></p>
+        </li>
+        <li>
+          <p><a class="link" href="/about">About</a></p>
+        </li>
+        {{#if loggedIn}}
+          <li>
+            <p><a class="link" href="/store">Store</a></p>
+          </li>
+          <li>
+            <p><button id="logout-btn" class="btn-no-style">Logout</button> </p>
+          </li>
 
-            {{else}}
-            <li>
-                <p><a class="link" href="/login">Login</a></p>
-            </li>
-            {{/if}}
-    </nav>
-    <h1 class="band-name band-name-large">Piece of Cake Store</h1>
-</header>
+        {{else}}
+          <li>
+            <p><a class="link" href="/login">Login</a></p>
+          </li>
+        {{/if}}
+      </nav>
+      <h1 class="store-name store-name-large">Piece of Cake</h1>
+    </header>
 
   <main class="d-flex min-vh-100">
         <section class="container content-section">

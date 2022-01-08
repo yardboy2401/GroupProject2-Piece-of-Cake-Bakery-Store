@@ -1,6 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
 {{!-- login/signup front-end page with fields and buttons --}}
 <link rel="stylesheet" href="./css/login.css">
 <div class="wrapper">
+<head>
+
+<body>
+        <header class="main-header">
+            <nav class="nav main-nav">
+            <li>
+                <p><a class="link" href="/">Home</a></p>
+            </li>
+                        <li>
+                <p><a class="link" href="/about">About</a></p>
+            </li>
+            {{#if loggedIn}}
+            <li>
+                <p><a class="link" href="/store">Store</a></p>
+            </li>
+            <li>
+                <p><button id="logout-btn" class="btn-no-style">Logout</button> </p>
+            </li>
+
+            {{else}}
+            <li>
+                <p><a class="link" href="/login">Login</a></p>
+            </li>
+            {{/if}}
+            </nav>
+            <h1 class="store-name store-name-large">Piece of Cake</h1>
+        </header>
+
+
    
 
     <div class="container my-5">
@@ -41,5 +72,7 @@
         </div>
     </div>
 </div>
+
+</body>
 
 <script src="/js/login.js"></script>

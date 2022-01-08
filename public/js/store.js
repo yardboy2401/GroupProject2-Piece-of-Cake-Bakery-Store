@@ -26,6 +26,7 @@ function ready() {
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
 
+
 // var stripeHandler = StripeCheckout.configure({
 //   //  key: stripePublicKey,
 //     key: 'pk_test_51KEIxsKyIJghRqcQtP6TEYCPEIWUgiRDwXoSz8qQiBR0PXSUZLsWihHZn22eU44s8oPve7V1Lqp9MiL2ieY2hGwp00WbZPnpCJ',
