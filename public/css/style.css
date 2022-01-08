@@ -90,7 +90,7 @@ html, body {
 .main-footer {
     background-color: #FEF9E3;
     color: white;
-    padding: 4px 0;
+    padding: 2px 0;
 }
 
 .main-footer-container {
@@ -104,7 +104,7 @@ html, body {
 }
 
 .footer-nav li {
-    padding: 0 8px;
+    padding: 0 4px;
 }
 
 .footer-nav img {
@@ -301,6 +301,15 @@ html, body {
     font-size: 1.75em;
 }
 
+.carousel {
+    text-align: center;
+    margin: 0;
+    font-size: 64px;
+    font-family: "Cormorant";
+    font-weight: bold;
+    color: black; 
+    opacity: .85;
+}
 
 .carousel-caption {
     padding-bottom: 5%;
@@ -308,19 +317,17 @@ html, body {
 
 .carousel-caption h3 {
     font-size: 42px;
+    text-shadow: 2px 2px 5px white;
     font-weight: bold;
+    color: black;
 }
 
 .carousel p {
     font-size: 24px;
-    color: beige;
-    opacity: 0,5;
-}
-
-.carousel-item {
-    height: 300px;
+    text-shadow: 2px 2px 5px white;
+    color: black;
 }
 
 .w-100 {
-    height: 50px;
+    height: 450px;
 }
