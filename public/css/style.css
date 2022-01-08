@@ -16,6 +16,7 @@ html, body {
 
 .nav li {
     display: inline;
+    margin: 10px auto 10px auto;
 }
 
 .nav a {
