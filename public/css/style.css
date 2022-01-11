@@ -328,6 +328,8 @@ html, body {
     color: black;
 }
 
-/* .w-100 {
-    height: 800px;
-} */
+
+
+.w-100 {
+    height: 100%;
+}

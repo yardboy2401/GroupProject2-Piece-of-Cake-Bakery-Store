@@ -1,5 +1,7 @@
+//require Store Model
 const { Store } = require('../models');
 
+//store seed data
 const storeData = [
     {
       "title": "Chocolate Almond Croissant",
@@ -16,7 +18,7 @@ const storeData = [
     {
         "title": "Baguette",
         "description": "A delicious small crusty loaf of heaven!",
-        "price": "2.49",
+        "price": "2.39",
         "imgName": "baguette.JPG"
     },
     {
@@ -57,6 +59,8 @@ const storeData = [
     },
   ]
 
+//seedStore data function
 const seedStore = () => Store.bulkCreate(storeData);
 
+//export seedStore method
 module.exports = seedStore;

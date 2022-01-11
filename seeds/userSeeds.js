@@ -1,32 +1,35 @@
+//require User Model
 const { User } = require('../models');
 
+//user seed data
 const userData = [
     {
-      "name": "Ted",
+      "username": "Ted",
       "email": "ted@hotmail.com",
       "password": "password1234"
     },
     {
-      "name": "Frank",
+      "username": "Frank",
       "email": "frank@gmail.com",
       "password": "password1234"
     },
     {
-      "name": "Johnny",
+      "username": "Johnny",
       "email": "johnny@yahoo.com",
       "password": "password1234"
     },
     {
-        "name": "Jeff",
-        "email": "yardboy2401@gmail.com",
-        "password": "password1234"
+      "username": "Jeff",
+      "email": "yardboy2401@gmail.com",
+      "password": "password1234"
       }
   ]
 
-  //seed users and hash passwords upon creation
+//seed users and hash passwords upon creation
 const seedUsers = () => User.bulkCreate(userData, {
   individualHooks: true,
   returning: true,
 });
 
+//export seedUsers method
 module.exports = seedUsers;
