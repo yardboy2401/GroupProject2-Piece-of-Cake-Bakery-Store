@@ -1,10 +1,11 @@
+//requires for express Router and User Model
 const router = require("express").Router();
-const { User, Store } = require("../../models");
+const { User } = require("../../models");
 
 //get route for all the users
 router.get("/", (req, res) => {
   User.findAll({
-    attributes: ["id", "name", "email", "password"], //TODO remove password in the futrue
+    attributes: ["id", "name", "email", "password"], //TODO remove password in the future
   }) //include the posts and comments of the specific user
     .then((dbUserData) => {
       res.json(dbUserData);
@@ -40,7 +41,7 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
     User.create({
       //expects username, email, password
-      name: req.body.username,
+      username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     })
@@ -49,7 +50,7 @@ router.post("/", (req, res) => {
         req.session.save(() => {
           // run the save function
           req.session.user_id = dbUserData.id; 
-          req.session.name = dbUserData.name;
+          req.session.username = dbUserData.username;
           req.session.loggedIn = true;
           res.json(dbUserData); 
         });

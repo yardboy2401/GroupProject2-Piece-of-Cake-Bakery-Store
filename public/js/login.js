@@ -16,14 +16,16 @@ async function loginFormHandler(event) {
     });
 
     //if response is ok respond with console message and replace front-end homepage
-    if (response.ok) {
-      console.log(response, " Logged in successfully!");
-      document.location.replace("/");
-    } else {
-      alert(response.statusText);
-    }
+    setTimeout(function () {
+      if (response.ok) {
+        console.log(response, " Logged in successfully!");
+        document.location.replace("/");
+      } else {
+        alert(response.statusText);
+      }
+    }, 500);
   }
-}
+};
 
 //handler function for new signup
 async function signupFormHandler(event) {
@@ -59,14 +61,17 @@ async function signupFormHandler(event) {
       headers: { "Content-Type": "application/json" },
     });
 
-    if (responseTwo.ok) {
-      console.log(response, " Logged in successfully!");
-      document.location.replace("/");
-    } else {
-      alert(response.statusText);
-    }
+    setTimeout(function () {
+      if (responseTwo.ok) {
+        console.log(response, " Logged in successfully!");
+        document.location.replace("/");
+      } else {
+        alert(response.statusText);
+      }
+    }, 500);
   }
-}
+};
 //Add event listeners for on-clicks for login/signup
 document.querySelector("#login-btn").addEventListener("click", loginFormHandler);
+
 document.querySelector("#signup-btn").addEventListener("click", signupFormHandler);
