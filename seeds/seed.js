@@ -1,8 +1,9 @@
+//requires for seeding users/store
 const seedStore = require('./storeSeeds');
 const seedUsers = require('./userSeeds');
-
 const sequelize = require('../config/connection');
 
+//seedAll method for users/store
 const seedAll = async () => {
   await sequelize.sync({ force: true })
   console.log('Database Synced');
