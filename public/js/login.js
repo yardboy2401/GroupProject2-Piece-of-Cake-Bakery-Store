@@ -69,7 +69,26 @@ async function signupFormHandler(event) {
         alert(response.statusText);
       }
     }, 500);
-  }
+
+    const sendEmail = await fetch('api/users/send', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username,
+        email,
+      }),
+    })
+    .then((res) => res.json())
+    .then((res) => {
+      console.log('here is the response: ', res);
+    })
+    .catch((err) => {
+      console.error('here is the error: ', err);
+    })
+}
 };
 //Add event listeners for on-clicks for login/signup
 document.querySelector("#login-btn").addEventListener("click", loginFormHandler);
