@@ -6,14 +6,6 @@ const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
 
-// const cors = require("cors");
-
-// app.use(
-//   cors({
-//     origin: "http://localhost:5500",
-//   })
-// );
-
 //sequelize requires
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
