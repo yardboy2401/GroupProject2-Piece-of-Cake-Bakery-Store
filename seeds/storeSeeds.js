@@ -7,7 +7,7 @@ const storeData = [
       "title": "Chocolate Almond Croissant",
       "description": "A wonderful pastry to go with your morning coffee or anytime really!",
       "price": "3.49",
-      "imgName": "chocolatealmondcroissant.JPG"
+      "imgName": "chocolatealmondcroissant.jpg"
     },
     {
         "title": "Maple Bar",
