@@ -51,7 +51,7 @@ button.addEventListener("click", () => {
       price: price,
     });
   }
-  fetch("localhost:80/create-checkout-session", {
+  fetch("https://project2-pieceofcake.herokuapp.com/create-checkout-session", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
