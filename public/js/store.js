@@ -51,7 +51,7 @@ button.addEventListener("click", () => {
       price: price,
     });
   }
-  fetch("localhost:5500/create-checkout-session", {
+  fetch("localhost:80/create-checkout-session", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
