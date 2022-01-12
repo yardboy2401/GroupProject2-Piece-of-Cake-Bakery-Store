@@ -66,7 +66,6 @@ router.get("/about", (req, res) => {
         return;
       }
       const stores = dbStoreData.map((store) => store.get({ plain: true })); // .map method on all the posts
-      console.log(stores);
       res.render("about", { stores, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
