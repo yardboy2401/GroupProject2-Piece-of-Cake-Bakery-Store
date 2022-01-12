@@ -120,8 +120,8 @@ router.post("/create-checkout-session", async (req, res) => {
         }
       }),
       //success/cancel URL's for stripe transaction
-      success_url: `${process.env.CLIENT_URL}/success`,
-      cancel_url: `${process.env.CLIENT_URL}/cancel`,
+      success_url: `https://project2-pieceofcake.herokuapp.com/success`,
+      cancel_url: `https://project2-pieceofcake.herokuapp.com/cancel`,
     })
     res.json({ url: session.url })
   } catch (e) {
