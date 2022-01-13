@@ -358,11 +358,18 @@ border: 4px solid black;
     .shop-item-image {
         height: 200px;
     }
+    .btn-header {
+        font-size: 14px;
+    }
+    .about-store-image {
+        height: 200px;
+        width: 200px;
+    }
     .section-header {
         font-size: 2rem;
     }
     .store-name-large {
-        font-size: 64px;
+        font-size: 48px;
     }
     .d-flex {
         flex-direction: column-reverse;
@@ -379,5 +386,8 @@ border: 4px solid black;
     .cart-quantity-input {
         margin-left: 10px;
         width: 40px;
+    }
+    .main-nav li {
+        padding: 0;
     }
 }
