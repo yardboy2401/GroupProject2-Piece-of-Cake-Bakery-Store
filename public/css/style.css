@@ -341,3 +341,36 @@ border: 4px solid black;
 .w-100 {
     height: 100%;
 }
+
+@media screen and (max-width: 768px) {
+    .section-header {
+        font-size: 2rem;
+    }
+    .store-name-large {
+        font-size: 96px;
+    }
+    .d-flex {
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .shop-item-image {
+        height: 200px;
+    }
+    .section-header {
+        font-size: 2rem;
+    }
+    .store-name-large {
+        font-size: 64px;
+    }
+    .d-flex {
+        flex-direction: column-reverse;
+    }
+    .cart-item-image {
+        width: 50px;
+    }
+    .cart-row {
+        font-size: 0.75rem;
+    }
+}
