@@ -73,7 +73,8 @@ Piece of Cake Bakery Store works well using deployed Heroku version of the app. 
 ## Contact Information
 
 Github: https://github.com/yardboy2401
-
-Email: yardboy2401@gmail.com
+Github: https://github.com/Etuzolana
+Github: https://github.com/rsternik
+Github: https://github.com/tah899
 
 - - - -
