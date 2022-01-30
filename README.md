@@ -54,16 +54,26 @@ Use this [project presentation template](https://docs.google.com/presentation/d/
 ​
 * Links to the deployed application and the GitHub repository. Use the [Guide to Deploy with Heroku and MySQL](https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql) on The Full-Stack Blog if you need a reminder on how to deploy to Heroku.
 ​
-## How to Submit Your Interactive Full-Stack Project
-​
-**Each member of your group** is required to submit the following for review:
-​
-* The URL of the deployed application.
-​
-* The URL of the GitHub repository, with a unique name and a README describing the project.
-​
----
+## Links for GitHub repository and Deployed Heroku App
 
+https://github.com/yardboy2401/project2-pieceofcake
 
+https://project2-pieceofcake.herokuapp.com/
 
-https://yardboy2401.github.io/project2-pieceofcake/
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/85953688/151715506-d63885d4-33fd-4db5-9f72-569c3112e778.png)
+
+![image](https://user-images.githubusercontent.com/85953688/151715535-d52ac5e1-376c-4b65-8a2f-fcac12b21b4d.png)
+
+## Project Notes
+
+Piece of Cake Bakery Store works well using deployed Heroku version of the app. Session authentication works for existing user and new user signup. Access to the store page and shopping cart is not allowed unless a user is signed into the app. The automatic email (nodemailer) sent for a new user signup is working with mailtrap software to intercept the email being sent. Also, Stripe payment processing is working for test environment with test credit card for purchasing items in the store.
+
+## Contact Information
+
+Github: https://github.com/yardboy2401
+
+Email: yardboy2401@gmail.com
+
+- - - -
